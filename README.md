@@ -5,7 +5,7 @@ klaytn기반의 스마트컨트랙트 &amp; 탈중앙화앱
 
 
 
-블록체인이란? 
+## 블록체인이란? 
 정보를 블록이라고 하는 단위로 저장하여 저장된 블록들을 체인 형태로 묶은 저장기술
 
 block_0 — block_1 —— block_2 ———  block_3 —— block_4
@@ -27,7 +27,7 @@ Sha-256 에서 256은 비트수를 나타낸다 (편의상 HEX로 나타냄)
 
 
 
-블록높이, 블록생성주기(시간)
+## 블록높이, 블록생성주기(시간)
 
 블록들은 이전 블록이 아래에 오고 최근 블록이 위로 오도록 정렬하면
 블록이 생성됨에 따라 체인의 높이가 늘어난다.
@@ -48,7 +48,7 @@ Sha-256 에서 256은 비트수를 나타낸다 (편의상 HEX로 나타냄)
 
 
 
-블록체인 네트워크 (peer - 2- peer) , 노드
+## 블록체인 네트워크 (peer - 2- peer) , 노드
 
 - 블록체인은 한명 이상의 참여자가 있는 네트워크에서 관리한다.
 - 네트워크 참여자 전원은 모든 블록을 동일한 순서로 저장하여 모두 같은 블록체인을 유지한다.
@@ -58,7 +58,7 @@ Sha-256 에서 256은 비트수를 나타낸다 (편의상 HEX로 나타냄)
 
 
 
-합의 ( Consensus )
+## 합의 ( Consensus )
 
 -자격이 있는 참여자는 블록을 제안(propose)할 수 있다
 -블록 제안 자격은 네트워크마다 상이 (e.g., PoW : 작업증명)
@@ -89,7 +89,7 @@ Sha-256 에서 256은 비트수를 나타낸다 (편의상 HEX로 나타냄)
 
 
 
-Public vs. Private
+## Public vs. Private
 
 퍼블릭과 프라이빗의 구분은 블록체인에 다음을 수행할 수 있는지 확인하여 결정한다: 
 
@@ -121,7 +121,7 @@ Permissionless/Permissioned는 정보의 제어(Control), 즉 무엇이 블록�
 
 
 
-암호
+## 암호
 
 고전적인 암호: 카이사르 암호
 암호화하려는 내용을 알파벳별로 일정한 거리(distance, d)만큼 밀어서 다른 알파벳으로 치환하는 기법.
@@ -155,7 +155,7 @@ Permissionless/Permissioned는 정보의 제어(Control), 즉 무엇이 블록�
 
 
 
-전자서명
+## 전자서명
 
 비대칭키 암호화는 지정된 사람만 정보를 확인할 수 있도록 도와준다(privacy)
 - Alice가 Bob에게 메시지를 보낼 때 PK를 사용
@@ -201,7 +201,7 @@ Permissionless/Permissioned는 정보의 제어(Control), 즉 무엇이 블록�
 
 
 
-트랜잭션(Transaction , TX)
+## 트랜잭션(Transaction , TX)
 블록 정보의 단위
 
 
@@ -216,7 +216,7 @@ TX_1 -> TX_2와 TX_2 -> TX_1은 다름
 
 
 
-
+## pow / bft 비교
 
 Pow 기반 합의의 한계
 PoW기반 합의는 확률에 기반하기 때문에 경우에 따라 블록이 사라질 수 있으므로 완결성이 부재함
@@ -264,8 +264,7 @@ BFT 기반 블록체인은 블록의 완결성이 보장됨
 
 
 
-Klaytn BFT
-
+## Klaytn BFT
 
 Klaytn은 확장가능한 BFT를 사용
 
@@ -282,7 +281,7 @@ Klaytn은 확장가능한 BFT를 사용
 
 
 
-블록체인의 상태 ( Blockchain State)
+## 블록체인의 상태 ( Blockchain State)
 
 (어카운트 기반) 블록체인의 상태
 블록체인은 트랜잭션( 트랜잭션에는 from — to가 있다)으로 변화하는 상태기계(State Machine)
@@ -290,7 +289,7 @@ Klaytn은 확장가능한 BFT를 사용
 
 
 
-State machine(상태 기계)
+## State machine(상태 기계)
 
 블록체인은 초기 상태에서 변경사항을 적용하여 최종 상태로 변화하는 상태 기계
 - 이전 블록의 최종 상태(final state)는 현재 블록의 초기 상태(initial state)
@@ -304,7 +303,7 @@ State machine(상태 기계)
 
 
  
-( Recall ) Ethereum 어카운트의 종류 
+## ( Recall ) Ethereum 어카운트의 종류 
 
 1) External Account : 사용자(end user)가 사용하는 어카운트(a.k.a. EOA)
 2) Contract Account : 스마트 컨트랙트를 표현하는 어카운트
@@ -320,7 +319,7 @@ EOA(Externall Owned Accounts)는 블록에 기록되는 TX를 생성
 
  
 
-트랜잭션(TX)과 가스(Gas)
+## 트랜잭션(TX)과 가스(Gas)
 
 1. TX의 목적은 블록체인의 상태를 변경하는 것
  - TX는 보내는 사람(sender, from)과 받는 사람(recipient , to)이 지정되어 있으며 
@@ -335,7 +334,7 @@ EOA(Externall Owned Accounts)는 블록에 기록되는 TX를 생성
 
 
 
-트랜잭션과 서명
+## 트랜잭션과 서명
 1) 플랫폼은 Sender가 TX가 처리되는데 필요한 가스비를 가지고 있는지 확인한다.
 - 가스비 확인은 구현에 따라 상이
 - Ethereum/Klaytn은 노드가 TX를 수신함과 동시에 가스비 이상의 balance가 있는지 확인
@@ -381,22 +380,22 @@ v,  r ,s 는 전자서명이다!
 
 
 
-스마트컨트랙트와 솔리디티
+## 스마트컨트랙트와 솔리디티
 
-Smart Contracts 란?
+### Smart Contracts 란?
 특정 주소에 배포되어 있는 TX로 실행 가능한 코드
 - 스마트 컨트랙트 소스코드는 함수와 상태를 표현 ; 컨트랙트 소스코드는 블록체인에 저장
 - 함수는 상태를 변경하는 함수, 상태를 변경하지 않는 함수로 분류
 - 사용자 (end user, EOA owner)가 스마트 컨트랙트 함수를 실행하거나 상태를 읽을 때 주소가 필요
 
 
-스마트 컨트랙트는 사용자가 실행
+### 스마트 컨트랙트는 사용자가 실행
 - 상태를 변경하는 함수를 실행하려면 그에 맞는 TX를 생성하여 블록에 추가 ( TX체결 = 함수의 실행)
 - 상태를 변경하지 않는 함수, 상태를 읽는 행위는 TX가 필요없음(노드에서 실행)
 
 
 
-Solidity
+### Solidity
 - Ethereum/Klaytn에서 지원하는 스마트 컨트랙트 언어
 - Clayton Solidity 버전 0.4.24, 0.5.6 을 지원
 - 일반적인 프로그래밍 언어와 그 문법과 사용이 유사하나 몇가지 제약이 존재
@@ -407,7 +406,7 @@ Solidity
 
 
 
-Contract = Code + Data
+### Contract = Code + Data
 
 - solidity 컨트랙트는 코드(함수)와 데이터(상태)로 구성 : 코드는 함수!! 데이터는 상태!!
 - solidity 함수는 코드 안에 변수로 선언된 상태(state)를 변경하거나 불러옴
