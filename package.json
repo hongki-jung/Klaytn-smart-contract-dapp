@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "caver-js": "^1.6.7"
+  }
+}
