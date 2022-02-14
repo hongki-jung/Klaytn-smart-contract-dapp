@@ -145,13 +145,13 @@ Ex) 클레이튼
 Permissionless  vs. Permissioned
 
 일반적으로 네트워크의 참여가 제한된 경우 ‘permissioned’, 그렇지 않은 경우 ‘permission less’라 정의
-네트워크의 참ㅁ여의 정의
+네트워크의 참여의 정의
 
-- (넓은 의미) 블록체인 P2P 네트워크에 참여
-- (좁은 의미) 합의 과정의 참여
+- (넓은 의미) 블록체인 P2P 네트워크에 참여 - 제어
+- (좁은 의미) 합의 과정의 참여 - 제어
 
-Public / Private의 개념이 정보의 접근성(Access)와 관련이 있다면
-Permissionless/Permissioned는 정보의 제어(Control), 즉 무엇이 블록에 포함되는지를 결정하는 지에 더 밀접한 개념이다
+__Public / Private의 개념이 정보의 접근성(Access)와 관련이 있다면
+Permissionless/Permissioned는 정보의 제어(Control), 즉 무엇이 블록에 포함되는지를 결정하는 지에 더 밀접한 개념이다.__
 
 
 
@@ -615,3 +615,138 @@ Contract Coin {
 <br/>
 <br/>
     
+
+
+Blockchain Application (BApp)
+
+1) 블록체인 어플리케이션(bapp)은 블록체인을 사용하는 어플리 케이션을 말한다
+- 기존의 기술로 풀기 어려운 문제들을 블록체인의 특성을 활용하여 풀어내는 것이 목적
+
+2) 불변성과 투명성이 대표적인 블록체인의 특성
+- 한번 기록된 정보는 변경할 수 없으며
+- 정해진 규칙(e.g, 블록 생성 등 프로토콜이 가진 규칙, 컨트랙트로 구현된 규칙)에 따라 상태를 변경
+- 기록의 내역이 블록에 공개되어 있으므로 누구든지 정보의 진실여부를 확인 가능
+
+
+
+<br/>
+<br/>
+
+
+BApp의 유형
+1) Fully decentralized 
+ : 사용자( 클라이언트)가 직접 블록체인과 통신
+
+ex) 메타마스크 지갑
+
+장점 : 높은 투명성 , 신뢰형성에 필요한 비용이 없음, 경우에 따라 익명성 보장, (설치형 BApp의 경우)관리 비용이 낮음
+단점: 사용자 책임 증가, 어려운UX, 로직 변경이 어려움
+
+
+2) Semi-decentralized with centralized proxy
+: 클라이언트가 블록체인과 통신하기 위해 중개 서버와 통신
+- 블록체인 기반으로 만들어진 서비스가 있고 그 서비스를 사용자들이 사용하는 형태
+- 클라이언트 <-> 중개서버 <-> 블록체인
+
+
+장점: 높은 수준의 UX, 사용자가 직접 TX를 만들고 서명을 할 필요가 없음, 로직 변경이 쉬움
+단점: 신뢰비용 발생, 관리 비용이 높음, 서비스가 Single Point Failure ( sPoF)가 됨
+
+<br/>
+<br/>
+
+
+
+
+BApp 개발
+1) 프론트엔드 (Front End)
+ - 사용자가 직접 사용하는 프로그램( e,g, mobile app, web page/app)
+- TX생성, 서명 , 전송 등을 프론트엔드에서 처리
+- 지갑, 사용자 환경 고려  
+
+2) 백엔드( Back End)
+- 프론트엔드에서 사용자 요청을 전송하면 백엔드가 처리하는 구조
+- 블록체인 동기화 등 컴퓨팅 리소스가 많이 필요한 일을 처리하는데 적합
+- 블록체인 동기화, 블록 파싱, TX전달, 가스비 대납 등을 백엔드에서 처리
+
+
+
+
+3)  Fully decentralized = Front End + Blockchain
+- e.g. , web + Klaytn
+- e.g. , android + Clayton
+- e.g., Windows + klaytn
+
+4) semi-decentralized = front + server + blockchain
+e.g , web + java Server on was + klaytn
+e.g, android + node.js Server on asure + klaytn 
+
+
+
+프론트엔드 개발에 영향을 끼치는 실행환경중 하나가 지갑!!  - 지갑에 키가 보관됨 , 지갑은 키를 관리해주는 프로그램이다!!
+- 지갑의 존재유무에 따라 개발방법이 변경
+- 특정 지갑을 사용할 경우 해당 지갑이 제공하는 라이브러리를 사용
+
+
+
+
+<br/>
+<br/>
+
+
+
+
+지갑 (Wallet)
+1) Tx를 서명하려면 키가 필요하다
+- 키가 있다는 것은 어카운트가 있다는 것이다.
+- 서로 다른 키는 다른 어카운트에 매핑
+- 하나의 어카운트(키)로 여러 BApp을 사용하려는 사용자의 니즈가 존재
+
+2) 지갑 = ‘키’ 를 관리하는 프로그램
+- 키를 보관하고 BApp이 요청할 때마다 보관 중인 키로 TX를 서명
+- 여러 유형의 지갑이 존재한다.
+
+
+
+지갑을 고려한 BApp 개발 
+- 어떤 지갑을 사용하느냐에 따라 사용자 환경이 변화
+
+Ex)
+웹앱의 경우 metamask를 사용가능 (ethereum)
+모바일 웹 또는 모바일 네이티브의 경우 삼성 블록체인 키스토어를 사용가능 (Klaytn)
+
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+블록체인의 응용사례
+
+1. Blockchain for businesses
+	a. Supply chain
+	b. Cross-border settlement
+
+2. Blockchain for end-users
+	a. Electonic medium of exchange
+	b. Unique electronic assets
+
+
+
+
+a. What is  Supply chain ??
+
+- 공급망 관리 (Supply chain Management)
+: 부품 제공업자, 생산자, 고객에 이르는 물류의 흐름을 하나의 가치사슬 관점에서
+파악하고 필요한 정보가 원활히 흐르도록 지원하는 시스템
+
+- SCM은 글로벌화된 시장에 필수
+: 특히 제조업 같은 경우 제품가치의 60~70%가 제조 이외의 부분에서 발생하므로 전체라인의 관리가 필요하다
+
+Ex) Walmart food trust chain  원산지/배송과정 추적
+
