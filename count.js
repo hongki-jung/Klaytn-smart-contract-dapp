@@ -127,6 +127,8 @@ contract.methods.set(100)   // SimpleStorage의 set함수를 실행; 상태를 �
     .on('receipt',(receipt)=>{});
 
 
+    
+
 // 스마트 컨트랙트 함수 실행(constant)
 const contract = new caver.klay.Contract(abi, '0x20e199c44768F2C39Cb771D2F96');
 
