@@ -15,11 +15,13 @@ contract Count{
     address public lastParticipant;
 
 
+
+
     // function 
     // 함수는 실행 가능한 코드를 정의한 것이다
     // external, public, internal, private 중 하나로 visibility를 설정할 수 있다.
     // payable, view, pure 등 함수의 유형을 정의 가능 
-    
+
     function plus() public{
         count++;
         lastParticipant = msg.sender;
