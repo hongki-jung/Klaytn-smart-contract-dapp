@@ -555,7 +555,7 @@ v,  r ,s 는 전자서명이다!
 
 
 
-### Solidity
+## Solidity
 - Ethereum/Klaytn에서 지원하는 스마트 컨트랙트 언어
 - Clayton Solidity 버전 0.4.24, 0.5.6 을 지원
 - 일반적인 프로그래밍 언어와 그 문법과 사용이 유사하나 몇가지 제약이 존재
@@ -697,7 +697,7 @@ e.g, android + node.js Server on asure + klaytn
 
 
 
-### 지갑 (Wallet)
+## 지갑 (Wallet)
 1) Tx를 서명하려면 키가 필요하다
 - 키가 있다는 것은 어카운트가 있다는 것이다.
 - 서로 다른 키는 다른 어카운트에 매핑
