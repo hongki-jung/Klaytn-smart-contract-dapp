@@ -3,6 +3,7 @@ pragma solidity ^0.5.6;
 contract Count{
 
     // state variables 
+    
 
     // 1) 블록체인에 영구히 저장할 값들은 상태변수(state variable)로 선언한다
     // - 어떤 값들은 반드시 state variable로 선언되어야 함( e.g, mapping)
@@ -13,7 +14,7 @@ contract Count{
     // => 외부에 노출 . getter 함수 자동 생성
 
     unit public count = 0;
-    
+
     address public lastParticipant;
 
 
