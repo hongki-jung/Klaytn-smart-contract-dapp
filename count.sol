@@ -10,7 +10,7 @@ contract Count{
 
     // 2) public 키워드를 사용하여 변수를 외부에 노출할 수 있다
     // 이 경우 자동으로 해당 변수 값을 돌려주는 getter함수가 생성됨
-    // => 외부에 노출 . getter 함수 자동 생성d
+    // => 외부에 노출 . getter 함수 자동 생성
 
     unit public count = 0;
     address public lastParticipant;
