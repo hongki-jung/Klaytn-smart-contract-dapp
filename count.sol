@@ -13,6 +13,7 @@ contract Count{
     // => 외부에 노출 . getter 함수 자동 생성
 
     unit public count = 0;
+    
     address public lastParticipant;
 
 
