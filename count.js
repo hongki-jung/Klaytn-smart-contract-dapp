@@ -139,3 +139,16 @@ contract.methods.get().call(null, (err, result)=>{
         console.error(err);
     }
 })
+
+
+
+// Client using caver-js
+const BallotContract = new carver.klay.COntract(abi, address);
+BallotContract.event.Voted(
+    {fromBlock: 0},
+    function(error, event){
+        console.log(event);
+    }
+).on('error', console.error);
+
+ 
