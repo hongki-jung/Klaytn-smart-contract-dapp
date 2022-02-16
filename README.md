@@ -484,6 +484,7 @@ Klaytn : from주소 확인 -> 저장된 공개키 불러오기 -> 서명 직접 
 
 
 트랜잭션 예시
+```
 {
 	
 	nonce: 1,
@@ -496,7 +497,7 @@ Klaytn : from주소 확인 -> 저장된 공개키 불러오기 -> 서명 직접 
 	r,	
 	s
 }
-
+```
 Nonce: 어카운트가 몇 번째 트랜잭션을 보내는 건지 알려준다
 From : 송신자의 주소
 To: 수신자의 주소
@@ -579,7 +580,7 @@ v,  r ,s 는 전자서명이다!
 
 - solidity 컨트랙트는 코드(함수)와 데이터(상태)로 구성 : 코드는 함수!! 데이터는 상태!!
 - solidity 함수는 코드 안에 변수로 선언된 상태(state)를 변경하거나 불러옴
-
+```
 Contract SimpleStorage{
 
 	uint storedData;
@@ -592,10 +593,10 @@ Contract SimpleStorage{
 	}
 
 }
-
+```
 
 Solidity 예제 - Coin 컨트랙트
-
+```
 // solidity로 간단한 포인트 시스템을 구현
 // [Coin 컨트랙트]
 
@@ -611,13 +612,13 @@ Contract Coin {
 	// [omitted for brevity] 
 }
 
-
+```
 <br/>
 <br/>
     
 
 
-Blockchain Application (BApp)
+### Blockchain Application (BApp)
 
 1) 블록체인 어플리케이션(bapp)은 블록체인을 사용하는 어플리 케이션을 말한다
 - 기존의 기술로 풀기 어려운 문제들을 블록체인의 특성을 활용하여 풀어내는 것이 목적
@@ -633,7 +634,7 @@ Blockchain Application (BApp)
 <br/>
 
 
-BApp의 유형
+## BApp의 유형
 1) Fully decentralized 
  : 사용자( 클라이언트)가 직접 블록체인과 통신
 
@@ -658,7 +659,7 @@ ex) 메타마스크 지갑
 
 
 
-BApp 개발
+## BApp 개발
 1) 프론트엔드 (Front End)
  - 사용자가 직접 사용하는 프로그램( e,g, mobile app, web page/app)
 - TX생성, 서명 , 전송 등을 프론트엔드에서 처리
@@ -696,7 +697,7 @@ e.g, android + node.js Server on asure + klaytn
 
 
 
-지갑 (Wallet)
+### 지갑 (Wallet)
 1) Tx를 서명하려면 키가 필요하다
 - 키가 있다는 것은 어카운트가 있다는 것이다.
 - 서로 다른 키는 다른 어카운트에 매핑
@@ -726,7 +727,7 @@ Ex)
 
 
 
-블록체인의 응용사례
+## 블록체인의 응용사례
 
 1. Blockchain for businesses
 	a. Supply chain
